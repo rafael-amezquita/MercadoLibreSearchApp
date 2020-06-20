@@ -15,37 +15,28 @@ protocol SearchTableViewDelegate: class {
 class SearchTableViewController: UITableViewController {
     
     weak var delegate: SearchTableViewDelegate? = nil
-    
     private let sarchViewModel = SearchViewModel()
+    
+    // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Place the search bar in the navigation bar.
+        
         navigationItem.searchController = searchController()
         navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
+    // MARK: Components
     
     private func searchController() -> UISearchController {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
-        // Monitor when the search button is tapped.
         searchController.searchBar.delegate = self
         
         return searchController
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // MARK: - UITableViewDataSource
@@ -53,12 +44,10 @@ class SearchTableViewController: UITableViewController {
 extension SearchTableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return sarchViewModel.products.count
     }
     
@@ -94,6 +83,7 @@ extension SearchTableViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - UISearchResultsUpdating
 extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         print("updating")

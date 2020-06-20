@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class DetailsViewModel {
+    
+    var product: Product?
+    
+    init() {}
+}

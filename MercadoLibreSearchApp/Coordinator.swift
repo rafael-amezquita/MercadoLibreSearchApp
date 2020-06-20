@@ -14,6 +14,8 @@ class Coordinator {
     private let searchTableViewController: SearchTableViewController
     private let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
+    // MARK: - Lifecycle
+    
     init(with searchController: SearchTableViewController) {
         searchTableViewController = searchController
         searchTableViewController.delegate = self
@@ -21,9 +23,13 @@ class Coordinator {
     
 }
 
+// MARK: - SearchTableViewDelegate
+
 extension Coordinator: SearchTableViewDelegate {
     func didSelect(product: Product) {
-        let detailsController = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
-        searchTableViewController.show(detailsController, sender: self)
+        if let detailsController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            detailsController.detailsViewModel.product = product
+            searchTableViewController.show(detailsController, sender: self)
+        }
     }
 }

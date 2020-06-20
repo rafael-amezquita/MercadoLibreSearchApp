@@ -143,13 +143,10 @@
 		E1F59196249BA7CB00293BD4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E1F59174249BA74C00293BD4 /* AppDelegate.swift */,
-				E1F59176249BA74C00293BD4 /* SceneDelegate.swift */,
+				E1F591CC249E733E00293BD4 /* AppLifecycle */,
 				E1F591CA249CE2B800293BD4 /* Coordinator.swift */,
-				E1F591C6249C509900293BD4 /* SearchTableViewController.swift */,
-				E1F591B3249BF44E00293BD4 /* DetailViewController.swift */,
-				E1F591BE249C344800293BD4 /* SearchViewModel.swift */,
-				E1F591C1249C346600293BD4 /* DetailsViewModel.swift */,
+				E1F591CD249E738300293BD4 /* Controllers */,
+				E1F591CE249E739900293BD4 /* ViewModels */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -185,6 +182,33 @@
 				E1F591AD249BF29B00293BD4 /* CarthageInputFile.xcfilelist */,
 			);
 			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		E1F591CC249E733E00293BD4 /* AppLifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				E1F59174249BA74C00293BD4 /* AppDelegate.swift */,
+				E1F59176249BA74C00293BD4 /* SceneDelegate.swift */,
+			);
+			name = AppLifecycle;
+			sourceTree = "<group>";
+		};
+		E1F591CD249E738300293BD4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1F591C6249C509900293BD4 /* SearchTableViewController.swift */,
+				E1F591B3249BF44E00293BD4 /* DetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E1F591CE249E739900293BD4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E1F591BE249C344800293BD4 /* SearchViewModel.swift */,
+				E1F591C1249C346600293BD4 /* DetailsViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
