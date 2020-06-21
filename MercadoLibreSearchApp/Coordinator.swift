@@ -29,7 +29,7 @@ extension Coordinator: SearchTableViewDelegate {
     func didSelect(product: Product) {
         if let detailsController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailsController.detailsViewModel.product = product
-            searchTableViewController.show(detailsController, sender: self)
+            searchTableViewController.navigationController?.pushViewController(detailsController, animated: true)
         }
     }
 }

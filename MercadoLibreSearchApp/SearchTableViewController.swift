@@ -82,9 +82,19 @@ extension SearchTableViewController: UISearchBarDelegate {
 }
 
 // MARK: - UISearchResultsUpdating
+
 extension SearchTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         print("updating")
+    }
+}
+
+// MARK: - Restoration
+
+extension SearchTableViewController {
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        // TODO: encode & decode products
     }
 }
 

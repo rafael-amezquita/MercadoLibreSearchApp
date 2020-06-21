@@ -12,16 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private var coordinator: Coordinator?
+    var coordinator: Coordinator?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        if let navigationController = window?.rootViewController as? UINavigationController,
-            let searchTableViewController = navigationController.topViewController as? SearchTableViewController  {
-            coordinator = Coordinator(with: searchTableViewController)
-        }
-        
+        coordinatorConfiguration()
         return true
     }
 
@@ -42,7 +37,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @available(iOS 13.2, *)
     func application(_ application: UIApplication, shouldRestoreSecureApplicationState coder: NSCoder) -> Bool {
+        coordinatorConfiguration()
         return true
+    }
+    
+    // MARK: - Utilities
+    
+    func coordinatorConfiguration() {
+        guard let navigationController = window?.rootViewController as? UINavigationController,
+            let searchTableViewController = navigationController.topViewController as? SearchTableViewController  else {
+                return
+        }
+            
+        coordinator = Coordinator(with: searchTableViewController)
     }
 
 }
