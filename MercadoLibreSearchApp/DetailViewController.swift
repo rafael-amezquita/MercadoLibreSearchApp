@@ -9,17 +9,16 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    
+        
     var detailsViewModel = DetailsViewModel()
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    // MARK: - Lifecycle
+    // MARK: - Life Cycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         nameLabel.text = detailsViewModel.product?.name ?? "no name"
         priceLabel.text = detailsViewModel.product?.price ?? "no price"
     }

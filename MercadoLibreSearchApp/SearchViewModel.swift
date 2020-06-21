@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product {
+struct Product: Codable {
     var name: String
     var price: String
 }

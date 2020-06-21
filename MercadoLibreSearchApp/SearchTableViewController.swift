@@ -67,8 +67,6 @@ extension SearchTableViewController {
 
 extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("notify coordinator if needed")
-        
         let product = sarchViewModel.products[indexPath.row]
         delegate?.didSelect(product: product)
         tableView.deselectRow(at: indexPath, animated: false)
