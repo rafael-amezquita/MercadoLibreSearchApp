@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol  SearchAdaptable {
+protocol SearchAdaptable {
     
     func products(from query: String, completion: @escaping ([Product]?)-> Void)
 }

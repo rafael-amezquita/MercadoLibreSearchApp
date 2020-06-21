@@ -21,7 +21,7 @@ class SearchTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        sarchViewModel.delegate = self
         navigationItem.searchController = searchController()
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -95,6 +95,14 @@ extension SearchTableViewController {
     override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
         // TODO: encode & decode products
+    }
+}
+
+// MARK: - SearchViewModelChangeDelegate
+
+extension SearchTableViewController: SearchViewModelChangeDelegate {
+    func productsDidUpdate() {
+        tableView.reloadData()
     }
 }
 

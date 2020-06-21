@@ -12,30 +12,23 @@ import XCTest
 class MercadoLibreSearchAppTests: XCTestCase {
     
     var adapter: SearchAdaptable!
+    var searchViewModel: SearchViewModelRetrievable!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         // TODO: Implement a mocked proxy
         adapter = SearchAdapter()
+        // TODO: Implement a mocked adapter
+        searchViewModel = SearchViewModel()
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
-    func test_productRespose_shouldNotBeNil() {
+    // MARK: - Adapter Tests
+    
+    func test_productResponse_shouldNotBeNil() {
         let exp = expectation(description: "loading goals")
         
         adapter.products(from: "Samsung%20Galaxy%20S8") { products in
@@ -45,5 +38,12 @@ class MercadoLibreSearchAppTests: XCTestCase {
         
         wait(for: [exp], timeout: 3)
     }
-
+    
+    // MARK: - View Model Tests
+    
+    func test_searchAdaptedResponse_productsShouldNotBeEmpty() {
+        searchViewModel.fetchProducts(from: "Samsung%20Galaxy%20S8")
+        XCTAssertNotEqual(searchViewModel.products.count, 0)
+    }
+    
 }

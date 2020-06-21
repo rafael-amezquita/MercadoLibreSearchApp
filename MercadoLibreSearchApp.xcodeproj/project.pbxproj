@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */; };
+		E157424024A00F3D00842179 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
+		E157424124A00F7000842179 /* ServiceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */; };
 		E1C36D95249EEC95008FE5F4 /* DetailsController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D94249EEC95008FE5F4 /* DetailsController+ViewState.swift */; };
 		E1C36D97249FB205008FE5F4 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
 		E1C36D99249FB4A9008FE5F4 /* ServiceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */; };
@@ -358,8 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F591C0249C344800293BD4 /* SearchViewModel.swift in Sources */,
+				E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */,
 				E1F5918C249BA75700293BD4 /* MercadoLibreSearchAppTests.swift in Sources */,
 				E1F591C3249C346600293BD4 /* DetailsViewModel.swift in Sources */,
+				E157424024A00F3D00842179 /* SearchServices.swift in Sources */,
+				E157424124A00F7000842179 /* ServiceDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

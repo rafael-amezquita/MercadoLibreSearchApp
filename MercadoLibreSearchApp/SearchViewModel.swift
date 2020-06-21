@@ -13,8 +13,48 @@ struct Product: Codable {
     var price: String
 }
 
-class SearchViewModel {
+protocol SearchViewModelChangeDelegate: class {
     
+    func productsDidUpdate()
+}
+
+protocol SearchViewModelRetrievable {
+    
+    var products: [Product] { get }
+    func fetchProducts(from query: String)
+}
+
+class SearchViewModel: SearchViewModelRetrievable {
+    
+    weak var delegate: SearchViewModelChangeDelegate?
+    
+    private(set) var products: [Product] {
+        didSet {
+            delegate?.productsDidUpdate()
+        }
+    }
+    
+    private let adapter: SearchAdaptable
+    
+    init(with adapter: SearchAdaptable = SearchAdapter()) {
+        self.adapter = adapter
+        products = [Product]()
+    }
+    
+    func fetchProducts(from query: String) {
+        adapter.products(from: query) {
+            [weak self] result in
+            
+            guard let self = self,
+                let adaptedProducts = result else {
+                return
+            }
+            
+            self.products = adaptedProducts
+        }
+    }
+    
+    /*
     var products: [Product] {
         return [
             Product(name:"Product 1", price: "$1"),
@@ -29,6 +69,6 @@ class SearchViewModel {
             Product(name:"Product 10", price: "$10")
         ]
     }
-    
-    init() {}
+     */
+
 }
