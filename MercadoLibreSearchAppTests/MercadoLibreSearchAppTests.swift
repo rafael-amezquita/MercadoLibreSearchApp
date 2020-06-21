@@ -10,9 +10,12 @@ import XCTest
 @testable import MercadoLibreSearchApp
 
 class MercadoLibreSearchAppTests: XCTestCase {
-
+    
+    var service: SearchServices!
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        service = SearchServices()
     }
 
     override func tearDownWithError() throws {
@@ -29,6 +32,19 @@ class MercadoLibreSearchAppTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    //TODO: remove this test or apply protocols, this has network interaction
+    func test_searchProduct_shouldReturnProductArray() {
+        let exp = expectation(description: "loading goals")
+        
+        service.products { 
+          exp.fulfill()
+        }
+        
+        wait(for: [exp], timeout: 3)
+        
+        //XCTAssertNotNil(goalsList)
     }
 
 }

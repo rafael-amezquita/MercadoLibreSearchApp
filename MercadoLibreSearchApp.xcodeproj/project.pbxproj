@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E1C36D95249EEC95008FE5F4 /* DetailsController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D94249EEC95008FE5F4 /* DetailsController+ViewState.swift */; };
+		E1C36D97249FB205008FE5F4 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
+		E1C36D99249FB4A9008FE5F4 /* ServiceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */; };
 		E1F59175249BA74C00293BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F59174249BA74C00293BD4 /* AppDelegate.swift */; };
 		E1F5917C249BA74C00293BD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5917A249BA74C00293BD4 /* Main.storyboard */; };
 		E1F5917E249BA75600293BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F5917D249BA75600293BD4 /* Assets.xcassets */; };
@@ -19,8 +21,6 @@
 		E1F591A0249BB13B00293BD4 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1F5919E249BB13B00293BD4 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1F591AE249BF29B00293BD4 /* CarthageInputFile.xcfilelist in Resources */ = {isa = PBXBuildFile; fileRef = E1F591AD249BF29B00293BD4 /* CarthageInputFile.xcfilelist */; };
 		E1F591B4249BF44E00293BD4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F591B3249BF44E00293BD4 /* DetailViewController.swift */; };
-		E1F591B6249BF49C00293BD4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F591B5249BF49C00293BD4 /* Item.swift */; };
-		E1F591B8249BF4E200293BD4 /* ItemSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F591B7249BF4E200293BD4 /* ItemSearchAPI.swift */; };
 		E1F591BF249C344800293BD4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F591BE249C344800293BD4 /* SearchViewModel.swift */; };
 		E1F591C0249C344800293BD4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F591BE249C344800293BD4 /* SearchViewModel.swift */; };
 		E1F591C2249C346600293BD4 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F591C1249C346600293BD4 /* DetailsViewModel.swift */; };
@@ -56,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		E1C36D94249EEC95008FE5F4 /* DetailsController+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsController+ViewState.swift"; sourceTree = "<group>"; };
+		E1C36D96249FB205008FE5F4 /* SearchServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServices.swift; sourceTree = "<group>"; };
+		E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataModel.swift; sourceTree = "<group>"; };
 		E1F59171249BA74C00293BD4 /* MercadoLibreSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibreSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F59174249BA74C00293BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F5917B249BA74C00293BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,8 +71,6 @@
 		E1F5919E249BB13B00293BD4 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		E1F591AD249BF29B00293BD4 /* CarthageInputFile.xcfilelist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcfilelist; path = CarthageInputFile.xcfilelist; sourceTree = "<group>"; };
 		E1F591B3249BF44E00293BD4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		E1F591B5249BF49C00293BD4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		E1F591B7249BF4E200293BD4 /* ItemSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSearchAPI.swift; sourceTree = "<group>"; };
 		E1F591BE249C344800293BD4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		E1F591C1249C346600293BD4 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		E1F591C6249C509900293BD4 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		E1F59197249BA7DE00293BD4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E1F591B5249BF49C00293BD4 /* Item.swift */,
+				E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 		E1F59198249BA7EE00293BD4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E1F591B7249BF4E200293BD4 /* ItemSearchAPI.swift */,
+				E1C36D96249FB205008FE5F4 /* SearchServices.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -342,10 +342,10 @@
 				E1F59175249BA74C00293BD4 /* AppDelegate.swift in Sources */,
 				E1F591B4249BF44E00293BD4 /* DetailViewController.swift in Sources */,
 				E1C36D95249EEC95008FE5F4 /* DetailsController+ViewState.swift in Sources */,
-				E1F591B6249BF49C00293BD4 /* Item.swift in Sources */,
-				E1F591B8249BF4E200293BD4 /* ItemSearchAPI.swift in Sources */,
+				E1C36D99249FB4A9008FE5F4 /* ServiceDataModel.swift in Sources */,
 				E1F591C2249C346600293BD4 /* DetailsViewModel.swift in Sources */,
 				E1F591CB249CE2B800293BD4 /* Coordinator.swift in Sources */,
+				E1C36D97249FB205008FE5F4 /* SearchServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
