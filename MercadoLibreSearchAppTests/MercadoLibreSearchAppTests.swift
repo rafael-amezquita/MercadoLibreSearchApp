@@ -11,11 +11,12 @@ import XCTest
 
 class MercadoLibreSearchAppTests: XCTestCase {
     
-    var service: SearchServices!
+    var adapter: SearchAdaptable!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        service = SearchServices()
+        // TODO: Implement a mocked proxy
+        adapter = SearchAdapter()
     }
 
     override func tearDownWithError() throws {
@@ -34,17 +35,15 @@ class MercadoLibreSearchAppTests: XCTestCase {
         }
     }
     
-    //TODO: remove this test or apply protocols, this has network interaction
-    func test_searchProduct_shouldReturnProductArray() {
+    func test_productRespose_shouldNotBeNil() {
         let exp = expectation(description: "loading goals")
         
-        service.products { 
-          exp.fulfill()
+        adapter.products(from: "Samsung%20Galaxy%20S8") { products in
+            XCTAssertNotNil(products)
+            exp.fulfill()
         }
         
         wait(for: [exp], timeout: 3)
-        
-        //XCTAssertNotNil(goalsList)
     }
 
 }
