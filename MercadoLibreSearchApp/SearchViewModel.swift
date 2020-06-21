@@ -37,12 +37,15 @@ class SearchViewModel: SearchViewModelRetrievable {
     private let adapter: SearchAdaptable
     
     init(with adapter: SearchAdaptable = SearchAdapter()) {
+        
         self.adapter = adapter
         products = [Product]()
     }
     
     func fetchProducts(from query: String) {
-        adapter.products(from: query) {
+        
+        let searchQuery = query.replacingOccurrences(of: " ", with: "%20")
+        adapter.products(from: searchQuery) {
             [weak self] result in
             
             guard let self = self,

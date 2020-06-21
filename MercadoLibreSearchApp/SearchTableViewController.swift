@@ -15,13 +15,13 @@ protocol SearchTableViewDelegate: class {
 class SearchTableViewController: UITableViewController {
     
     weak var delegate: SearchTableViewDelegate? = nil
-    private let sarchViewModel = SearchViewModel()
+    private let searchViewModel = SearchViewModel()
     
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        sarchViewModel.delegate = self
+        searchViewModel.delegate = self
         navigationItem.searchController = searchController()
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -30,7 +30,6 @@ class SearchTableViewController: UITableViewController {
     
     private func searchController() -> UISearchController {
         let searchController = UISearchController()
-        searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -48,13 +47,13 @@ extension SearchTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sarchViewModel.products.count
+        return searchViewModel.products.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
 
-        let product = sarchViewModel.products[indexPath.row]
+        let product = searchViewModel.products[indexPath.row]
         cell.textLabel?.text = product.name
         cell.detailTextLabel?.text = product.price
 
@@ -67,7 +66,7 @@ extension SearchTableViewController {
 
 extension SearchTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let product = sarchViewModel.products[indexPath.row]
+        let product = searchViewModel.products[indexPath.row]
         delegate?.didSelect(product: product)
         tableView.deselectRow(at: indexPath, animated: false)
     }
@@ -77,15 +76,10 @@ extension SearchTableViewController {
 
 extension SearchTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("just clicked")
-    }
-}
-
-// MARK: - UISearchResultsUpdating
-
-extension SearchTableViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        print("updating")
+        guard let searchQuery = searchBar.text else {
+            return
+        }
+        searchViewModel.fetchProducts(from: searchQuery)
     }
 }
 
