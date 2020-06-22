@@ -9,13 +9,6 @@
 import Foundation
 import Alamofire
 
-protocol SearchServicesProxy {
-    /*
-     Return the requested result list from a determined query
-     */
-    func products(from query: String, completion: @escaping (Error?, [MLProduct]?) -> Void )
-}
-
 class SearchServices: SearchServicesProxy {
     // TODO: take the URL from .plist
     /// https://api.mercadolibre.com/products/search?status=$STATUS_ID&site_id=$SITE_ID&q={q}

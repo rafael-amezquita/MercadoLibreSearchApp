@@ -31,7 +31,7 @@ class SearchAdapter: SearchAdaptable {
             
             var products = [Product]()
             for item in serviceProducts {
-                let product = Product(name: item.name, price: "")
+                let product = Product(name: item.name, domain: item.domainID)
                 products.append(product)
             }
             

@@ -55,7 +55,7 @@ extension SearchTableViewController {
 
         let product = searchViewModel.products[indexPath.row]
         cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = product.price
+        cell.detailTextLabel?.text = product.domain
 
         return cell
     }

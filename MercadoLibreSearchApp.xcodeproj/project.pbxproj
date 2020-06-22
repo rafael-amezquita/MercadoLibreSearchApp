@@ -8,17 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */; };
-		E157424024A00F3D00842179 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
-		E157424124A00F7000842179 /* ServiceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */; };
+		E157424924A022F600842179 /* SearchAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424824A022F600842179 /* SearchAdapterTest.swift */; };
+		E157424B24A0237500842179 /* SearchServicesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424A24A0237500842179 /* SearchServicesProxy.swift */; };
+		E157424C24A0237500842179 /* SearchServicesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424A24A0237500842179 /* SearchServicesProxy.swift */; };
+		E157424D24A0253A00842179 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F5919A249BB12B00293BD4 /* Alamofire.framework */; };
+		E157424E24A0255D00842179 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
+		E157425024A0262300842179 /* SearchAdapterUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424F24A0262300842179 /* SearchAdapterUseCases.swift */; };
+		E157425124A0262300842179 /* SearchAdapterUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424F24A0262300842179 /* SearchAdapterUseCases.swift */; };
+		E157425324A02C0100842179 /* MLPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157425224A02C0100842179 /* MLPicture.swift */; };
+		E157425424A02C0100842179 /* MLPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157425224A02C0100842179 /* MLPicture.swift */; };
+		E157425624A02C3900842179 /* MLAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157425524A02C3900842179 /* MLAttribute.swift */; };
+		E157425724A02C3900842179 /* MLAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157425524A02C3900842179 /* MLAttribute.swift */; };
+		E157425924A02C6800842179 /* MLProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157425824A02C6800842179 /* MLProduct.swift */; };
+		E157425A24A02C6800842179 /* MLProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157425824A02C6800842179 /* MLProduct.swift */; };
 		E1C36D95249EEC95008FE5F4 /* DetailsController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D94249EEC95008FE5F4 /* DetailsController+ViewState.swift */; };
 		E1C36D97249FB205008FE5F4 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
-		E1C36D99249FB4A9008FE5F4 /* ServiceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */; };
 		E1C36D9B249FEBF8008FE5F4 /* SearchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */; };
 		E1F59175249BA74C00293BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F59174249BA74C00293BD4 /* AppDelegate.swift */; };
 		E1F5917C249BA74C00293BD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5917A249BA74C00293BD4 /* Main.storyboard */; };
 		E1F5917E249BA75600293BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F5917D249BA75600293BD4 /* Assets.xcassets */; };
 		E1F59181249BA75600293BD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5917F249BA75600293BD4 /* LaunchScreen.storyboard */; };
-		E1F5918C249BA75700293BD4 /* MercadoLibreSearchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F5918B249BA75700293BD4 /* MercadoLibreSearchAppTests.swift */; };
 		E1F5919B249BB12B00293BD4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F5919A249BB12B00293BD4 /* Alamofire.framework */; };
 		E1F5919C249BB12B00293BD4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1F5919A249BB12B00293BD4 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1F5919F249BB13B00293BD4 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F5919E249BB13B00293BD4 /* Lottie.framework */; };
@@ -59,9 +68,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E157424824A022F600842179 /* SearchAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapterTest.swift; sourceTree = "<group>"; };
+		E157424A24A0237500842179 /* SearchServicesProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServicesProxy.swift; sourceTree = "<group>"; };
+		E157424F24A0262300842179 /* SearchAdapterUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapterUseCases.swift; sourceTree = "<group>"; };
+		E157425224A02C0100842179 /* MLPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLPicture.swift; sourceTree = "<group>"; };
+		E157425524A02C3900842179 /* MLAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLAttribute.swift; sourceTree = "<group>"; };
+		E157425824A02C6800842179 /* MLProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProduct.swift; sourceTree = "<group>"; };
 		E1C36D94249EEC95008FE5F4 /* DetailsController+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsController+ViewState.swift"; sourceTree = "<group>"; };
 		E1C36D96249FB205008FE5F4 /* SearchServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServices.swift; sourceTree = "<group>"; };
-		E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataModel.swift; sourceTree = "<group>"; };
 		E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapter.swift; sourceTree = "<group>"; };
 		E1F59171249BA74C00293BD4 /* MercadoLibreSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibreSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F59174249BA74C00293BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +84,6 @@
 		E1F59180249BA75600293BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1F59182249BA75600293BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F59187249BA75700293BD4 /* MercadoLibreSearchAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadoLibreSearchAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1F5918B249BA75700293BD4 /* MercadoLibreSearchAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoLibreSearchAppTests.swift; sourceTree = "<group>"; };
 		E1F5918D249BA75700293BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1F5919A249BB12B00293BD4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		E1F5919E249BB13B00293BD4 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
@@ -96,12 +109,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E157424D24A0253A00842179 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E157424524A01B6300842179 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E157424F24A0262300842179 /* SearchAdapterUseCases.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		E1F59168249BA74C00293BD4 = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +161,9 @@
 		E1F5918A249BA75700293BD4 /* MercadoLibreSearchAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				E1F5918B249BA75700293BD4 /* MercadoLibreSearchAppTests.swift */,
+				E157424524A01B6300842179 /* Mocks */,
 				E1F5918D249BA75700293BD4 /* Info.plist */,
+				E157424824A022F600842179 /* SearchAdapterTest.swift */,
 			);
 			path = MercadoLibreSearchAppTests;
 			sourceTree = "<group>";
@@ -158,7 +181,9 @@
 		E1F59197249BA7DE00293BD4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E1C36D98249FB4A9008FE5F4 /* ServiceDataModel.swift */,
+				E157425224A02C0100842179 /* MLPicture.swift */,
+				E157425524A02C3900842179 /* MLAttribute.swift */,
+				E157425824A02C6800842179 /* MLProduct.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -168,6 +193,7 @@
 			children = (
 				E1C36D96249FB205008FE5F4 /* SearchServices.swift */,
 				E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */,
+				E157424A24A0237500842179 /* SearchServicesProxy.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -344,15 +370,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F591BF249C344800293BD4 /* SearchViewModel.swift in Sources */,
+				E157425024A0262300842179 /* SearchAdapterUseCases.swift in Sources */,
 				E1C36D9B249FEBF8008FE5F4 /* SearchAdapter.swift in Sources */,
+				E157425624A02C3900842179 /* MLAttribute.swift in Sources */,
 				E1F591C7249C509900293BD4 /* SearchTableViewController.swift in Sources */,
 				E1F59175249BA74C00293BD4 /* AppDelegate.swift in Sources */,
 				E1F591B4249BF44E00293BD4 /* DetailViewController.swift in Sources */,
+				E157425924A02C6800842179 /* MLProduct.swift in Sources */,
 				E1C36D95249EEC95008FE5F4 /* DetailsController+ViewState.swift in Sources */,
-				E1C36D99249FB4A9008FE5F4 /* ServiceDataModel.swift in Sources */,
 				E1F591C2249C346600293BD4 /* DetailsViewModel.swift in Sources */,
 				E1F591CB249CE2B800293BD4 /* Coordinator.swift in Sources */,
 				E1C36D97249FB205008FE5F4 /* SearchServices.swift in Sources */,
+				E157424B24A0237500842179 /* SearchServicesProxy.swift in Sources */,
+				E157425324A02C0100842179 /* MLPicture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,11 +391,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F591C0249C344800293BD4 /* SearchViewModel.swift in Sources */,
+				E157425A24A02C6800842179 /* MLProduct.swift in Sources */,
+				E157425724A02C3900842179 /* MLAttribute.swift in Sources */,
+				E157425124A0262300842179 /* SearchAdapterUseCases.swift in Sources */,
 				E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */,
-				E1F5918C249BA75700293BD4 /* MercadoLibreSearchAppTests.swift in Sources */,
 				E1F591C3249C346600293BD4 /* DetailsViewModel.swift in Sources */,
-				E157424024A00F3D00842179 /* SearchServices.swift in Sources */,
-				E157424124A00F7000842179 /* ServiceDataModel.swift in Sources */,
+				E157424C24A0237500842179 /* SearchServicesProxy.swift in Sources */,
+				E157424E24A0255D00842179 /* SearchServices.swift in Sources */,
+				E157425424A02C0100842179 /* MLPicture.swift in Sources */,
+				E157424924A022F600842179 /* SearchAdapterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +595,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MercadoLibreSearchAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -582,6 +620,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MercadoLibreSearchAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (

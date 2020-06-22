@@ -20,6 +20,6 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nameLabel.text = detailsViewModel.product?.name ?? "no name"
-        priceLabel.text = detailsViewModel.product?.price ?? "no price"
+        priceLabel.text = detailsViewModel.product?.domain ?? "no data"
     }
 }
