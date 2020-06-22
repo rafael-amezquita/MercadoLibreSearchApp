@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import os
 
 class SearchServices: SearchServicesProxy {
     // TODO: take the URL from .plist
@@ -45,7 +46,8 @@ class SearchServices: SearchServicesProxy {
             products = response.results
         } catch {
             // TODO: handle error
-            print(error)
+            let errorLog = OSLog(subsystem: "com.org.MercadoLibreSearchApp", category: "SearchServicesProxy")
+            os_log("Error while parsing", log: errorLog, type: .error)
         }
         
         return products

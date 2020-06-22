@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 extension DetailViewController {
     
@@ -26,7 +27,8 @@ extension DetailViewController {
             let encodedProduct = try encoder.encode(product)
             coder.encode(encodedProduct, forKey: RestorationConstats.product)
         } catch {
-            print("Error at encoding = \(error)")
+            let errorLog = OSLog(subsystem: "com.org.MercadoLibreSearchApp", category: "DetailViewController")
+            os_log("Error while encoding view state", log: errorLog, type: .error)
         }
     }
     
@@ -39,7 +41,8 @@ extension DetailViewController {
                 detailsViewModel.product = try decoder.decode(Product.self, from: data)
             }
         } catch {
-            print("Error at decoding = \(error)")
+            let errorLog = OSLog(subsystem: "com.org.MercadoLibreSearchApp", category: "DetailViewController")
+            os_log("Error while decoding view state", log: errorLog, type: .error)
         }
     }
 }
