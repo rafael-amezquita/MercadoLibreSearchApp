@@ -46,7 +46,12 @@ class SearchViewModel: SearchViewModelRetrievable {
         
         let searchQuery = query.replacingOccurrences(of: " ", with: "%20")
         adapter.products(from: searchQuery) {
-            [weak self] result in
+            [weak self] error, result in
+            
+            guard error == nil else {
+                NotificationCenter.default.post(name: .connectionError, object: error)
+                return
+            }
             
             guard let self = self,
                 let adaptedProducts = result else {
@@ -57,4 +62,8 @@ class SearchViewModel: SearchViewModelRetrievable {
         }
     }
 
+}
+
+extension Notification.Name {
+    static let connectionError = Notification.Name("ConnectionError")
 }

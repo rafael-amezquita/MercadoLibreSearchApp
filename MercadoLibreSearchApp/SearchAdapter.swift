@@ -10,7 +10,11 @@ import Foundation
 
 protocol SearchAdaptable {
     
-    func products(from query: String, completion: @escaping ([Product]?)-> Void)
+    func products(from query: String, completion: @escaping (SearchError?, [Product]?)-> Void)
+}
+
+enum SearchError: Error {
+    case connection(message: String)
 }
 
 class SearchAdapter: SearchAdaptable {
@@ -20,13 +24,16 @@ class SearchAdapter: SearchAdaptable {
         self.proxy = proxy
     }
     
-    func products(from query: String, completion: @escaping ([Product]?) -> Void) {
+    func products(from query: String, completion: @escaping (SearchError?, [Product]?) -> Void) {
         proxy.products(from: query) { error, result in
             
             guard error == nil,
                 let serviceProducts = result  else {
-                completion(nil)
-                return
+                    if let error = error as? NSError {
+                        let searchError = SearchError.connection(message: error.localizedDescription)
+                        completion(searchError, nil)
+                    }
+                    return
             }
             
             var products = [Product]()
@@ -35,7 +42,7 @@ class SearchAdapter: SearchAdaptable {
                 products.append(product)
             }
             
-            completion(products)
+            completion(nil, products)
         }
     }
 }

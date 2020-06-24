@@ -20,14 +20,34 @@ class Coordinator {
     init(with searchController: SearchTableViewController) {
         searchTableViewController = searchController
         searchTableViewController.delegate = self
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onConnectionError(_:)),
+                                               name: .connectionError,
+                                               object: nil)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // MARK: - Notifications
+    
+    @objc func onConnectionError(_ notification: Notification) {
+        if let error = notification.object as? SearchError{
+            switch error {
+            case .connection(let message):
+                popupDialog(with: "Connection Error", message: message)
+            }
+        }
+    }
+    
+    // MARK: - PopUp
+    
     private func popupDialog(with title: String, message: String) {
-        
         let popup = PopupDialog(title: title, message: message, image: nil)
         let okButton = CancelButton(title: "OK", action: nil)
         popup.addButton(okButton)
-        
         searchTableViewController.present(popup, animated: true, completion: nil)
     }
     
@@ -42,9 +62,10 @@ extension Coordinator: SearchTableViewDelegate {
         }
     }
     
-    func didAppeared() {
+    func fisrtEmptyAppereance() {
         popupDialog(with: "Welcome", message: "Search the cellphone you wan't in the search bar above")
     }
+    
     func didSelect(product: Product) {
         if let detailsController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailsController.detailsViewModel.product = product

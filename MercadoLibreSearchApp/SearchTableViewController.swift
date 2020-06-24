@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SearchTableViewDelegate: class {
-    func didAppeared()
+    func fisrtEmptyAppereance()
     func didSelect(product: Product)
     func didReturnData(with results: [Product])
 }
@@ -26,14 +26,9 @@ class SearchTableViewController: UITableViewController {
         searchViewModel.delegate = self
         navigationItem.searchController = searchController()
         navigationItem.hidesSearchBarWhenScrolling = false
+        delegate?.fisrtEmptyAppereance()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        delegate?.didAppeared()
-    }
-    
+
     // MARK: Components
     
     private func searchController() -> UISearchController {
@@ -41,7 +36,6 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
-        
         return searchController
     }
 }
@@ -60,11 +54,9 @@ extension SearchTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell", for: indexPath)
-
         let product = searchViewModel.products[indexPath.row]
         cell.textLabel?.text = product.name
         cell.detailTextLabel?.text = product.domain
-
         return cell
     }
     
@@ -104,7 +96,6 @@ extension SearchTableViewController {
 
 extension SearchTableViewController: SearchViewModelChangeDelegate {
     func productsDidUpdate() {
-        
         tableView.reloadData()
         delegate?.didReturnData(with: searchViewModel.products)
     }
