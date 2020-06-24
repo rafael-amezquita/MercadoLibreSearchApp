@@ -28,5 +28,8 @@ struct Constants {
     static let noResultsPopupMessage = "ui.search.popup.no.results.message".localized()
     static let welcomePopupTitle = "ui.search.popup.welcome.title".localized()
     static let welcomePopupMessage = "ui.search.popup.welcome.message".localized()
-    static let popupButtom = "ui.search.popup.welcome.ok.button".localized()
+    static let popupButtomText = "ui.search.popup.ok.button.text".localized()
+    
+    static let connectionErrorTitle = "connection.error.title".localized()
+    static let configurationErrorTitle = "configuration.error.title".localized()
 }

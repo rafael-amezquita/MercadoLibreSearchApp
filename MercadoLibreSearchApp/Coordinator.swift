@@ -41,14 +41,14 @@ class Coordinator {
         if let error = notification.object as? SearchError {
             switch error {
             case .connection(let message):
-                popupDialog(with: "Connection Error", message: message)
+                popupDialog(with: Constants.connectionErrorTitle, message: message)
             }
         }
     }
     
     @objc func onConfigurationError(_ notification: Notification) {
         if let errorMessage = notification.object as? String {
-            popupDialog(with: "Configuration Error", message: errorMessage)
+            popupDialog(with: Constants.configurationErrorTitle, message: errorMessage)
         }
     }
     
@@ -56,7 +56,7 @@ class Coordinator {
     
     private func popupDialog(with title: String, message: String) {
         let popup = PopupDialog(title: title, message: message, image: nil)
-        let okButton = CancelButton(title: Constants.popupButtom, action: nil)
+        let okButton = CancelButton(title: Constants.popupButtomText, action: nil)
         popup.addButton(okButton)
         searchTableViewController.present(popup, animated: true, completion: nil)
     }

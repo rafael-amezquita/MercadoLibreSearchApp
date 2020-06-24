@@ -11,4 +11,8 @@
 "ui.search.popup.no.results.message"="try to put more than one descriptive word";
 "ui.search.popup.welcome.title"="Welcome";
 "ui.search.popup.welcome.message"="Search the cellphone you wan't in the search bar above";
-"ui.search.popup.ok.button"="OK";
+"ui.search.popup.ok.button.text"="OK";
+
+// errors
+"connection.error.title"="Connection Error";
+"configuration.error.title"="Connection Error";
