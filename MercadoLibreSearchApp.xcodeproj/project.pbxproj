@@ -12,7 +12,7 @@
 		E157424B24A0237500842179 /* SearchServicesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424A24A0237500842179 /* SearchServicesProxy.swift */; };
 		E157424C24A0237500842179 /* SearchServicesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424A24A0237500842179 /* SearchServicesProxy.swift */; };
 		E157424D24A0253A00842179 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F5919A249BB12B00293BD4 /* Alamofire.framework */; };
-		E157424E24A0255D00842179 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
+		E157424E24A0255D00842179 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchService.swift */; };
 		E157425024A0262300842179 /* SearchAdapterUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424F24A0262300842179 /* SearchAdapterUseCases.swift */; };
 		E157425124A0262300842179 /* SearchAdapterUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424F24A0262300842179 /* SearchAdapterUseCases.swift */; };
 		E157425324A02C0100842179 /* MLPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157425224A02C0100842179 /* MLPicture.swift */; };
@@ -24,8 +24,9 @@
 		E157425F24A2D2EA00842179 /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E157425E24A2D2EA00842179 /* PopupDialog.framework */; };
 		E157427224A2D41A00842179 /* DynamicBlurView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E157426824A2D36D00842179 /* DynamicBlurView.framework */; };
 		E157427324A2D41A00842179 /* DynamicBlurView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E157426824A2D36D00842179 /* DynamicBlurView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E157427524A36CAA00842179 /* Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = E157427424A36CAA00842179 /* Services.plist */; };
 		E1C36D95249EEC95008FE5F4 /* DetailsController+ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D94249EEC95008FE5F4 /* DetailsController+ViewState.swift */; };
-		E1C36D97249FB205008FE5F4 /* SearchServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchServices.swift */; };
+		E1C36D97249FB205008FE5F4 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D96249FB205008FE5F4 /* SearchService.swift */; };
 		E1C36D9B249FEBF8008FE5F4 /* SearchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */; };
 		E1F59175249BA74C00293BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F59174249BA74C00293BD4 /* AppDelegate.swift */; };
 		E1F5917C249BA74C00293BD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F5917A249BA74C00293BD4 /* Main.storyboard */; };
@@ -92,8 +93,9 @@
 		E157426E24A2D36D00842179 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Lottie.framework; sourceTree = "<group>"; };
 		E157426F24A2D36D00842179 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Alamofire.framework.dSYM; sourceTree = "<group>"; };
 		E157427024A2D36D00842179 /* E9F5403B-6B6D-3697-9B63-AA0E81622AEE.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "E9F5403B-6B6D-3697-9B63-AA0E81622AEE.bcsymbolmap"; sourceTree = "<group>"; };
+		E157427424A36CAA00842179 /* Services.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Services.plist; sourceTree = "<group>"; };
 		E1C36D94249EEC95008FE5F4 /* DetailsController+ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailsController+ViewState.swift"; sourceTree = "<group>"; };
-		E1C36D96249FB205008FE5F4 /* SearchServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServices.swift; sourceTree = "<group>"; };
+		E1C36D96249FB205008FE5F4 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapter.swift; sourceTree = "<group>"; };
 		E1F59171249BA74C00293BD4 /* MercadoLibreSearchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibreSearchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F59174249BA74C00293BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -234,9 +236,10 @@
 		E1F59198249BA7EE00293BD4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E1C36D96249FB205008FE5F4 /* SearchServices.swift */,
+				E1C36D96249FB205008FE5F4 /* SearchService.swift */,
 				E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */,
 				E157424A24A0237500842179 /* SearchServicesProxy.swift */,
+				E157427424A36CAA00842179 /* Services.plist */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E157427524A36CAA00842179 /* Services.plist in Resources */,
 				E1F591AE249BF29B00293BD4 /* CarthageInputFile.xcfilelist in Resources */,
 				E1F59181249BA75600293BD4 /* LaunchScreen.storyboard in Resources */,
 				E1F5917E249BA75600293BD4 /* Assets.xcassets in Resources */,
@@ -425,7 +429,7 @@
 				E1C36D95249EEC95008FE5F4 /* DetailsController+ViewState.swift in Sources */,
 				E1F591C2249C346600293BD4 /* DetailsViewModel.swift in Sources */,
 				E1F591CB249CE2B800293BD4 /* Coordinator.swift in Sources */,
-				E1C36D97249FB205008FE5F4 /* SearchServices.swift in Sources */,
+				E1C36D97249FB205008FE5F4 /* SearchService.swift in Sources */,
 				E157424B24A0237500842179 /* SearchServicesProxy.swift in Sources */,
 				E157425324A02C0100842179 /* MLPicture.swift in Sources */,
 			);
@@ -442,7 +446,7 @@
 				E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */,
 				E1F591C3249C346600293BD4 /* DetailsViewModel.swift in Sources */,
 				E157424C24A0237500842179 /* SearchServicesProxy.swift in Sources */,
-				E157424E24A0255D00842179 /* SearchServices.swift in Sources */,
+				E157424E24A0255D00842179 /* SearchService.swift in Sources */,
 				E157425424A02C0100842179 /* MLPicture.swift in Sources */,
 				E157424924A022F600842179 /* SearchAdapterTest.swift in Sources */,
 			);

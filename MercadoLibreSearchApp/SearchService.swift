@@ -10,18 +10,47 @@ import Foundation
 import Alamofire
 import os
 
-class SearchServices: SearchServicesProxy {
-    // TODO: take the URL from .plist
-    /// https://api.mercadolibre.com/products/search?status=$STATUS_ID&site_id=$SITE_ID&q={q}
-    private struct ServiceConstant {
-        static let baseURL = "https://api.mercadolibre.com/products/search?status=active&site_id=MLA&q="
+struct Service: Codable {
+    var baseURL: String
+    var searchEndPoint: String
+    var siteID: String
+    var queryKey: String
+}
+
+class SearchService: SearchServicesProxy {
+
+    private var service: Service?
+    
+    init() {
+        if let path = Bundle.main.path(forResource: "Services", ofType: "plist"),
+            let xml = FileManager.default.contents(atPath: path) {
+            do {
+                service = try PropertyListDecoder().decode(Service.self, from: xml)
+            } catch {
+                print("error \(error)")
+                //error notification
+            }
+        } else {
+            //error notification
+        }
+    }
+    
+    private func searchPath() -> String {
+        guard let service = self.service else {
+            return ""
+        }
+        
+        return service.baseURL
+            + service.searchEndPoint
+            + "\(service.siteID)="
+            + "\(service.queryKey)="
     }
     
     // MARK: - API
     
     func products(from query: String, completion: @escaping (Error?, [MLProduct]?) -> Void ) {
-        //Samsung%20Galaxy%20S8
-        Alamofire.request("\(ServiceConstant.baseURL)\(query)").responseJSON {
+        
+        Alamofire.request("\(searchPath())\(query)").responseJSON {
             jsonResponse in
             
             if let error = jsonResponse.error {

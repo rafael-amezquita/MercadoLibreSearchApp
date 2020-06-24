@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>queryKey</key>
+	<string>&amp;q</string>
+	<key>siteID</key>
+	<string>MLA</string>
+	<key>searchEndPoint</key>
+	<string>/products/search?status=active&amp;site_id</string>
+	<key>baseURL</key>
+	<string>https://api.mercadolibre.com</string>
+</dict>
+</plist>

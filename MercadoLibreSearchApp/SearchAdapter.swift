@@ -20,7 +20,7 @@ enum SearchError: Error {
 class SearchAdapter: SearchAdaptable {
     private let proxy: SearchServicesProxy
     
-    init(with proxy: SearchServicesProxy = SearchServices()) {
+    init(with proxy: SearchServicesProxy = SearchService()) {
         self.proxy = proxy
     }
     
