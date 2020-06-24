@@ -27,11 +27,12 @@ class SearchService: SearchServicesProxy {
             do {
                 service = try PropertyListDecoder().decode(Service.self, from: xml)
             } catch {
-                print("error \(error)")
-                //error notification
+                NotificationCenter.default.post(name: .configurationError,
+                                                object: "Service configuration not available")
             }
         } else {
-            //error notification
+            NotificationCenter.default.post(name: .configurationError,
+                                            object: "Service configuration not available")
         }
     }
     

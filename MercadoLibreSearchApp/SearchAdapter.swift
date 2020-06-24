@@ -13,10 +13,6 @@ protocol SearchAdaptable {
     func products(from query: String, completion: @escaping (SearchError?, [Product]?)-> Void)
 }
 
-enum SearchError: Error {
-    case connection(message: String)
-}
-
 class SearchAdapter: SearchAdaptable {
     private let proxy: SearchServicesProxy
     

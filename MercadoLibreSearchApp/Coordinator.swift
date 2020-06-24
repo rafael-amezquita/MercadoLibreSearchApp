@@ -25,6 +25,10 @@ class Coordinator {
                                                selector: #selector(onConnectionError(_:)),
                                                name: .connectionError,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onConfigurationError(_:)),
+                                               name: .configurationError,
+                                               object: nil)
     }
     
     deinit {
@@ -34,11 +38,17 @@ class Coordinator {
     // MARK: - Notifications
     
     @objc func onConnectionError(_ notification: Notification) {
-        if let error = notification.object as? SearchError{
+        if let error = notification.object as? SearchError {
             switch error {
             case .connection(let message):
                 popupDialog(with: "Connection Error", message: message)
             }
+        }
+    }
+    
+    @objc func onConfigurationError(_ notification: Notification) {
+        if let errorMessage = notification.object as? String {
+            popupDialog(with: "Configuration Error", message: errorMessage)
         }
     }
     

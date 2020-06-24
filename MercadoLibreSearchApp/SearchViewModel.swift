@@ -63,7 +63,3 @@ class SearchViewModel: SearchViewModelRetrievable {
     }
 
 }
-
-extension Notification.Name {
-    static let connectionError = Notification.Name("ConnectionError")
-}
