@@ -17,6 +17,8 @@ protocol SearchTableViewDelegate: class {
 class SearchTableViewController: UITableViewController {
     
     weak var delegate: SearchTableViewDelegate? = nil
+    
+    private let loader = UIActivityIndicatorView(style: .gray)
     private let searchViewModel = SearchViewModel()
     
     // MARK: Lifecycle
@@ -27,6 +29,15 @@ class SearchTableViewController: UITableViewController {
         navigationItem.searchController = searchController()
         navigationItem.hidesSearchBarWhenScrolling = false
         delegate?.fisrtEmptyAppereance()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.addSubview(loader)
+        
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        loader.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
+        loader.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
     }
 
     // MARK: Components
@@ -80,6 +91,7 @@ extension SearchTableViewController: UISearchBarDelegate {
             return
         }
         searchViewModel.fetchProducts(from: searchQuery)
+        loader.startAnimating()
     }
 }
 
@@ -98,6 +110,7 @@ extension SearchTableViewController: SearchViewModelChangeDelegate {
     func productsDidUpdate() {
         tableView.reloadData()
         delegate?.didReturnData(with: searchViewModel.products)
+        loader.stopAnimating()
     }
 }
 
