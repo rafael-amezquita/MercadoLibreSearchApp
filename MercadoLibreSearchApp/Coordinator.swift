@@ -56,7 +56,7 @@ class Coordinator {
     
     private func popupDialog(with title: String, message: String) {
         let popup = PopupDialog(title: title, message: message, image: nil)
-        let okButton = CancelButton(title: "OK", action: nil)
+        let okButton = CancelButton(title: Constants.popupButtom, action: nil)
         popup.addButton(okButton)
         searchTableViewController.present(popup, animated: true, completion: nil)
     }
@@ -68,12 +68,14 @@ class Coordinator {
 extension Coordinator: SearchTableViewDelegate {
     func didReturnData(with results: [Product]) {
         if results.count == 0 {
-            popupDialog(with: "0 results", message: "try to put more than one descriptive word")
+            popupDialog(with: Constants.noResultsPopupTitle,
+                        message: Constants.noResultsPopupMessage)
         }
     }
     
     func fisrtEmptyAppereance() {
-        popupDialog(with: "Welcome", message: "Search the cellphone you wan't in the search bar above")
+        popupDialog(with: Constants.welcomePopupTitle,
+                    message: Constants.welcomePopupMessage)
     }
     
     func didSelect(product: Product) {

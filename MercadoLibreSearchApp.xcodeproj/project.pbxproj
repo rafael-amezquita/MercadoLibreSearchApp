@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E11125CD24A37E92000C9145 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11125CC24A37E92000C9145 /* Common.swift */; };
+		E11AFA0224A396D70035D585 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E11AFA0524A396D70035D585 /* Localizable.strings */; };
+		E11AFA0324A396D70035D585 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E11AFA0524A396D70035D585 /* Localizable.strings */; };
 		E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */; };
 		E157424924A022F600842179 /* SearchAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424824A022F600842179 /* SearchAdapterTest.swift */; };
 		E157424B24A0237500842179 /* SearchServicesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424A24A0237500842179 /* SearchServicesProxy.swift */; };
@@ -72,6 +74,7 @@
 
 /* Begin PBXFileReference section */
 		E11125CC24A37E92000C9145 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		E11AFA0424A396D70035D585 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E157424824A022F600842179 /* SearchAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapterTest.swift; sourceTree = "<group>"; };
 		E157424A24A0237500842179 /* SearchServicesProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServicesProxy.swift; sourceTree = "<group>"; };
 		E157424F24A0262300842179 /* SearchAdapterUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapterUseCases.swift; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 		E1F59173249BA74C00293BD4 /* MercadoLibreSearchApp */ = {
 			isa = PBXGroup;
 			children = (
+				E11125CC24A37E92000C9145 /* Common.swift */,
+				E11AFA0524A396D70035D585 /* Localizable.strings */,
 				E1F59196249BA7CB00293BD4 /* Views */,
 				E1F59198249BA7EE00293BD4 /* Network */,
 				E1F59197249BA7DE00293BD4 /* Model */,
@@ -242,7 +247,6 @@
 				E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */,
 				E157424A24A0237500842179 /* SearchServicesProxy.swift */,
 				E157427424A36CAA00842179 /* Services.plist */,
-				E11125CC24A37E92000C9145 /* Common.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -378,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E157427524A36CAA00842179 /* Services.plist in Resources */,
+				E11AFA0224A396D70035D585 /* Localizable.strings in Resources */,
 				E1F591AE249BF29B00293BD4 /* CarthageInputFile.xcfilelist in Resources */,
 				E1F59181249BA75600293BD4 /* LaunchScreen.storyboard in Resources */,
 				E1F5917E249BA75600293BD4 /* Assets.xcassets in Resources */,
@@ -389,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E11AFA0324A396D70035D585 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +473,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E11AFA0524A396D70035D585 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E11AFA0424A396D70035D585 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E1F5917A249BA74C00293BD4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
