@@ -47,7 +47,6 @@ class SearchTableViewController: UITableViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = Constants.searchBarPlaceholder
-        searchController.searchBar.b
         return searchController
     }
 }
