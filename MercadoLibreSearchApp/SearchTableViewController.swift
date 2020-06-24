@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 protocol SearchTableViewDelegate: class {
     func didSelect(product: Product)
@@ -26,6 +27,12 @@ class SearchTableViewController: UITableViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        popupDialog(with: "Welcome", message: "Search the cellphone you wan't in the search bar above")
+    }
+    
     // MARK: Components
     
     private func searchController() -> UISearchController {
@@ -35,6 +42,13 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.delegate = self
         
         return searchController
+    }
+    
+    private func popupDialog(with title: String, message: String) {
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        let okButton = CancelButton(title: "OK", action: nil)
+        popup.addButton(okButton)
+        self.present(popup, animated: true, completion: nil)
     }
 }
 
@@ -96,7 +110,12 @@ extension SearchTableViewController {
 
 extension SearchTableViewController: SearchViewModelChangeDelegate {
     func productsDidUpdate() {
+        
         tableView.reloadData()
+        
+        if searchViewModel.products.count == 0 {
+            popupDialog(with: "0 results", message: "try to put more than one descriptive word")
+        }
     }
 }
 

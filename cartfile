@@ -1,2 +1,2 @@
 github "Alamofire/Alamofire" ~> 4.7.2
-github "airbnb/lottie-ios" "master"
+github "Orderella/PopupDialog" ~> 1.1
