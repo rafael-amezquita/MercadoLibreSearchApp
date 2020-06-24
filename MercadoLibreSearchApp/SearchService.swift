@@ -36,22 +36,22 @@ class SearchService: SearchServicesProxy {
         }
     }
     
-    private func searchPath() -> String {
+    private func searchPath(with query: String) -> String {
         guard let service = self.service else {
             return ""
         }
         
         return service.baseURL
-            + service.searchEndPoint
-            + "\(service.siteID)="
+            + "\(service.searchEndPoint)="
+            + "\(service.siteID)"
             + "\(service.queryKey)="
+            + "\(query)"
     }
     
     // MARK: - API
     
     func products(from query: String, completion: @escaping (Error?, [MLProduct]?) -> Void ) {
-        
-        Alamofire.request("\(searchPath())\(query)").responseJSON {
+        Alamofire.request(searchPath(with: query)).responseJSON {
             jsonResponse in
             
             if let error = jsonResponse.error {

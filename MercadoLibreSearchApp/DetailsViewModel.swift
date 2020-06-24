@@ -12,5 +12,11 @@ class DetailsViewModel {
     
     var product: Product?
     
-    init() {}
+    var nameString: String {
+        return product?.name ?? "no name"
+    }
+    
+    var detailsString: String {
+        return product?.domain ?? "no data"
+    }
 }

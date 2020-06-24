@@ -35,9 +35,7 @@ class SearchTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         view.addSubview(loader)
         
-        loader.translatesAutoresizingMaskIntoConstraints = false
-        loader.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
-        loader.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        loader.adjust(to: tableView)
     }
 
     // MARK: Components
@@ -114,3 +112,13 @@ extension SearchTableViewController: SearchViewModelChangeDelegate {
     }
 }
 
+
+// MARK: - UIActivityIndicatorView
+
+extension UIActivityIndicatorView {
+    func adjust(to view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+}

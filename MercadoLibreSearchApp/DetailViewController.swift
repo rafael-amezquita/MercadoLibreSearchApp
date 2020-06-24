@@ -13,13 +13,13 @@ class DetailViewController: UIViewController {
     var detailsViewModel = DetailsViewModel()
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var detailsLabel: UILabel!
     
     // MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nameLabel.text = detailsViewModel.product?.name ?? "no name"
-        priceLabel.text = detailsViewModel.product?.domain ?? "no data"
+        nameLabel.text = detailsViewModel.nameString
+        detailsLabel.text = detailsViewModel.detailsString
     }
 }
