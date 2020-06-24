@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import PopupDialog
 
 class Coordinator {
     
@@ -21,11 +22,29 @@ class Coordinator {
         searchTableViewController.delegate = self
     }
     
+    private func popupDialog(with title: String, message: String) {
+        
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        let okButton = CancelButton(title: "OK", action: nil)
+        popup.addButton(okButton)
+        
+        searchTableViewController.present(popup, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: - SearchTableViewDelegate
 
 extension Coordinator: SearchTableViewDelegate {
+    func didReturnData(with results: [Product]) {
+        if results.count == 0 {
+            popupDialog(with: "0 results", message: "try to put more than one descriptive word")
+        }
+    }
+    
+    func didAppeared() {
+        popupDialog(with: "Welcome", message: "Search the cellphone you wan't in the search bar above")
+    }
     func didSelect(product: Product) {
         if let detailsController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailsController.detailsViewModel.product = product
