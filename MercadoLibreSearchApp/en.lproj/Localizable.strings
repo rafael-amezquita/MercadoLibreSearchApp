@@ -5,6 +5,11 @@
   Created by Rafael Amezquita on 24/06/20.
   Copyright © 2020 Rafael Amezquita. All rights reserved.
 */
+// navigation bar
+"navigation.bar.title"="Search";
+
+// search bar
+"search.bar.placeholder"="Search";
 
 // search table
 "ui.search.popup.no.results.title"="No Results";

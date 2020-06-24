@@ -26,6 +26,7 @@ class SearchTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchViewModel.delegate = self
+        navigationItem.title = Constants.navigationBarTitle
         navigationItem.searchController = searchController()
         navigationItem.hidesSearchBarWhenScrolling = false
         delegate?.fisrtEmptyAppereance()
@@ -45,6 +46,8 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.autocapitalizationType = .none
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = Constants.searchBarPlaceholder
+        searchController.searchBar.b
         return searchController
     }
 }

@@ -24,6 +24,10 @@ extension String {
 }
 
 struct Constants {
+    static let navigationBarTitle = "navigation.bar.title".localized()
+    
+    static let searchBarPlaceholder = "search.bar.placeholder".localized()
+    
     static let noResultsPopupTitle = "ui.search.popup.no.results.title".localized()
     static let noResultsPopupMessage = "ui.search.popup.no.results.message".localized()
     static let welcomePopupTitle = "ui.search.popup.welcome.title".localized()
