@@ -21,7 +21,7 @@ class SearchAdapterTest: XCTestCase {
         
         let exp = expectation(description: "loading products")
         
-        adapter.products(from: randomQuery) { products in
+        adapter.products(from: randomQuery) { _, products in
             XCTAssertNotNil(products)
             exp.fulfill()
         }
@@ -35,7 +35,7 @@ class SearchAdapterTest: XCTestCase {
         
         let exp = expectation(description: "loading products")
         
-        adapter.products(from: randomQuery) { products in
+        adapter.products(from: randomQuery) { _, products in
             XCTAssertNil(products)
             exp.fulfill()
         }

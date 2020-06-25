@@ -10,6 +10,9 @@
 		E11125CD24A37E92000C9145 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11125CC24A37E92000C9145 /* Common.swift */; };
 		E11AFA0224A396D70035D585 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E11AFA0524A396D70035D585 /* Localizable.strings */; };
 		E11AFA0324A396D70035D585 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E11AFA0524A396D70035D585 /* Localizable.strings */; };
+		E11AFA0D24A404B40035D585 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AFA0C24A404B40035D585 /* SearchViewModelTest.swift */; };
+		E11AFA0E24A423030035D585 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11125CC24A37E92000C9145 /* Common.swift */; };
+		E11AFA1024A4343E0035D585 /* SearchViewModelUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11AFA0F24A4343E0035D585 /* SearchViewModelUseCases.swift */; };
 		E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C36D9A249FEBF8008FE5F4 /* SearchAdapter.swift */; };
 		E157424924A022F600842179 /* SearchAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424824A022F600842179 /* SearchAdapterTest.swift */; };
 		E157424B24A0237500842179 /* SearchServicesProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157424A24A0237500842179 /* SearchServicesProxy.swift */; };
@@ -75,6 +78,8 @@
 /* Begin PBXFileReference section */
 		E11125CC24A37E92000C9145 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E11AFA0424A396D70035D585 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E11AFA0C24A404B40035D585 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
+		E11AFA0F24A4343E0035D585 /* SearchViewModelUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelUseCases.swift; sourceTree = "<group>"; };
 		E157424824A022F600842179 /* SearchAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapterTest.swift; sourceTree = "<group>"; };
 		E157424A24A0237500842179 /* SearchServicesProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServicesProxy.swift; sourceTree = "<group>"; };
 		E157424F24A0262300842179 /* SearchAdapterUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAdapterUseCases.swift; sourceTree = "<group>"; };
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				E157424F24A0262300842179 /* SearchAdapterUseCases.swift */,
+				E11AFA0F24A4343E0035D585 /* SearchViewModelUseCases.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 				E157424524A01B6300842179 /* Mocks */,
 				E1F5918D249BA75700293BD4 /* Info.plist */,
 				E157424824A022F600842179 /* SearchAdapterTest.swift */,
+				E11AFA0C24A404B40035D585 /* SearchViewModelTest.swift */,
 			);
 			path = MercadoLibreSearchAppTests;
 			sourceTree = "<group>";
@@ -453,10 +460,13 @@
 				E157425A24A02C6800842179 /* MLProduct.swift in Sources */,
 				E157425724A02C3900842179 /* MLAttribute.swift in Sources */,
 				E157425124A0262300842179 /* SearchAdapterUseCases.swift in Sources */,
+				E11AFA0E24A423030035D585 /* Common.swift in Sources */,
 				E157423F24A00F0F00842179 /* SearchAdapter.swift in Sources */,
 				E1F591C3249C346600293BD4 /* DetailsViewModel.swift in Sources */,
 				E157424C24A0237500842179 /* SearchServicesProxy.swift in Sources */,
 				E157424E24A0255D00842179 /* SearchService.swift in Sources */,
+				E11AFA0D24A404B40035D585 /* SearchViewModelTest.swift in Sources */,
+				E11AFA1024A4343E0035D585 /* SearchViewModelUseCases.swift in Sources */,
 				E157425424A02C0100842179 /* MLPicture.swift in Sources */,
 				E157424924A022F600842179 /* SearchAdapterTest.swift in Sources */,
 			);

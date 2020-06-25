@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum UseCaseType {
+enum AdapterUseCaseType {
     case withData
     case error
 }
 
 class SearchAdapterUseCases {
   
-    static func createProxy(with useCase: UseCaseType) -> SearchServicesProxy {
+    static func createProxy(with useCase: AdapterUseCaseType) -> SearchServicesProxy {
         switch useCase {
         case .withData:
             return MockedProxyWithData()
